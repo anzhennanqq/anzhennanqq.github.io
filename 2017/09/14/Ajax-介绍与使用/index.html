@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="安振男">
+
+  
+  <title>Ajax 介绍与使用</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="这是我的第一个博客" type="application/atom+xml">
+  <link rel="canonical" href="http://anzhennanqq.github.io/2017/09/14/Ajax-介绍与使用/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_pb2xepysv85gsyvi.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-wendang"></i><a href="/index.html" class="aside-menu-link" title="首页">首页</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-wendang1"></i><a href="/archives/index.html" class="aside-menu-link" title="所有文章">所有文章</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-biaoqian1"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标签">分类标签</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-lianjie"></i><a href="/links/index.html" class="aside-menu-link" title="友情链接">友情链接</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-guanyu"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-houdongfangiconfont10"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.png" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          旋转的小骆驼
+          
+          <strong class="aside-avatar-STRONG">个人博客</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">观诸次为道，存神于想思。</p>
+      <ul class="aside-show-info">
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link" title="微信" target="_blank"><i class="aside-show-icon iconfont icon-iconfontweixin"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信">
+          </div>
+        </li>
+        <li class="aside-show-item"><a href="https://www.zhihu.com/people/chenfengmingwu/activities" class="aside-show-link" title="知乎" target="_blank"><i class="aside-show-icon iconfont icon-zhihu"></i></a></li>
+        <li class="aside-show-item"><a href="https://github.com/Sam618" class="aside-show-link" title="github" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link" title="QQ" target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG" src="/img/qq.png" alt="QQ">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Ajax 介绍与使用</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-09-14</span>
+      
+      
+    </p>
+    
+  </header>
+  <div class="post-content"><h3 id="Ajax是什么？如何运用？"><a href="#Ajax是什么？如何运用？" class="headerlink" title="Ajax是什么？如何运用？"></a>Ajax是什么？如何运用？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">AJAX不是新的编程语言，而是一种使用现有标准的新方法。</div><div class="line">AJAX = Asynchronous JavaScript and XML立基于非同步JavaScript和XML。简单地说，</div><div class="line">Ajax 即运用非标准的XMLHttpRequest对象，并配合服物器端的 脚本进行通讯。Ajax能够</div><div class="line">传送并接收各种格式的文件，其中包括 XML、HTML和JSON。Ajax最吸引人之处在于它的</div><div class="line">〝非同步〞性质，这意味着Ajax能做各种动作，而无须更新整个页面。如此便能透过使</div><div class="line">用者的事件更新页面的一小部分。</div><div class="line">无须重新载入整个页面，便能对服物器发送请求。</div><div class="line">分析并运用各种文件。</div></pre></td></tr></table></figure>
+<h3 id="第一步，创建XMLHttpRequest对象"><a href="#第一步，创建XMLHttpRequest对象" class="headerlink" title="第一步，创建XMLHttpRequest对象"></a>第一步，创建XMLHttpRequest对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div></pre></td></tr></table></figure>
+<h3 id="第二步，向服务器发送请求"><a href="#第二步，向服务器发送请求" class="headerlink" title="第二步，向服务器发送请求"></a>第二步，向服务器发送请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// open( method, url, async )</span></div><div class="line"><span class="comment">// 规定请求的类型、URL 以及是否异步处理请求。</span></div><div class="line"><span class="comment">// * method：请求的类型；GET 或 POST</span></div><div class="line"><span class="comment">// * url：文件在服务器上的位置</span></div><div class="line"><span class="comment">// * async：true（异步）或 false（同步）</span></div><div class="line">xhr.open( <span class="string">'get'</span>, <span class="string">'./test.json'</span>, <span class="literal">false</span> );</div><div class="line"><span class="comment">// send( string )</span></div><div class="line"><span class="comment">// 将请求发送到服务器。</span></div><div class="line"><span class="comment">// string：仅用于 POST 请求</span></div><div class="line">xhr.send( <span class="literal">null</span> );</div></pre></td></tr></table></figure>
+<p>请求的类型要如何选择呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">与POST相比，GET更简单也更快，并且在大部分情况下都能用。</div><div class="line">然而，在以下情况中，请使用POST请求：</div><div class="line">无法使用缓存文件（更新服务器上的文件或数据库）。</div><div class="line">向服务器发送大量数据（POST没有数据量限制）。</div><div class="line">发送包含未知字符的用户输入时，POST比GET更稳定也更可靠。</div></pre></td></tr></table></figure>
+<p>需要注意的是：使用get请求可能会读取缓存文件，使用如下代码可以避免获取：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open( <span class="string">'get'</span>, <span class="string">`./test.php?t=<span class="subst">$&#123;<span class="built_in">Math</span>.random()&#125;</span>`</span>, <span class="literal">false</span> );</div></pre></td></tr></table></figure>
+<p>如何发送信息？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// get 请求</span></div><div class="line">xhr.open( <span class="string">'get'</span>, <span class="string">'./test.php?name=sam&amp;age=19'</span>, <span class="literal">false</span> );</div><div class="line"><span class="comment">// get 请求不需要在 send 方法中发送数据</span></div><div class="line">xhr.send( <span class="literal">null</span> );</div><div class="line"><span class="comment">// post 请求</span></div><div class="line">xhr.open( <span class="string">'post'</span>, <span class="string">'./test.php'</span>, <span class="literal">false</span> );</div><div class="line"><span class="comment">// 需要设置请求头</span></div><div class="line"><span class="comment">// * header: 规定头的名称</span></div><div class="line"><span class="comment">// * value: 规定头的值</span></div><div class="line">xmlhttp.setRequestHeader( <span class="string">'Accept'</span>, <span class="string">'application/json'</span> );</div><div class="line">xhr.send( &#123; <span class="attr">name</span>: <span class="string">'sam'</span>, <span class="attr">age</span>: <span class="number">19</span> &#125; );</div></pre></td></tr></table></figure></p>
+<h3 id="第三步，接收响应"><a href="#第三步，接收响应" class="headerlink" title="第三步，接收响应"></a>第三步，接收响应</h3><p>异步执行需要在发送请求前加上响应函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">xhr.onreadystatechange = handler;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// 接收状态</span></div><div class="line">  <span class="keyword">if</span> ( <span class="keyword">this</span>.readyState !== <span class="number">4</span> ) &#123;</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 响应状态</span></div><div class="line">  <span class="keyword">if</span> ( <span class="keyword">this</span>.status === <span class="number">200</span> ) &#123;</div><div class="line">    resolve( <span class="keyword">this</span>.response );</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    reject( <span class="keyword">new</span> <span class="built_in">Error</span>( <span class="keyword">this</span>.statusText ) );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="最终实现代码"><a href="#最终实现代码" class="headerlink" title="最终实现代码"></a>最终实现代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params"> &#123; type, url, data = null, flag = true &#125; </span>) </span>&#123;</div><div class="line">  <span class="comment">// 使用了 ES6 的 Promise 对象，来传递异步操作的消息。</span></div><div class="line">  <span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function"><span class="keyword">function</span> (<span class="params"> resolve, reject </span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    xhr.onreadystatechange = handler;</div><div class="line">    xhr.open( type, url, flag );</div><div class="line">    xhr.send( data );</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// 接收状态</span></div><div class="line">      <span class="keyword">if</span> ( <span class="keyword">this</span>.readyState !== <span class="number">4</span> ) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="comment">// 响应状态</span></div><div class="line">      <span class="keyword">if</span> ( <span class="keyword">this</span>.status === <span class="number">200</span> ) &#123;</div><div class="line">        resolve( <span class="keyword">this</span>.response );</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        reject( <span class="keyword">new</span> <span class="built_in">Error</span>( <span class="keyword">this</span>.statusText ) );</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125; );</div><div class="line">  <span class="keyword">return</span> promise;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementById( <span class="string">'btn'</span> );</div><div class="line">btn.addEventListener( <span class="string">'click'</span>, () =&gt; &#123;</div><div class="line">  ajax( &#123;</div><div class="line">    type: <span class="string">'get'</span>,</div><div class="line">    url: <span class="string">'./test.json'</span>,</div><div class="line">  &#125; ).then( <span class="function"><span class="keyword">function</span> (<span class="params"> result </span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( result );</div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"> error </span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.error( error );</div><div class="line">  &#125; );</div><div class="line">&#125;, <span class="literal">false</span> );</div></pre></td></tr></table></figure></div>
+    
+      <p class="post-copyright">若无特别说明，本文系原创，署名-非商业性使用，转载文章请注明来自<a class="post-copyright-link" href="/" title="安振男的个人博客" target="_blank">安振男的个人博客</a>，或链接上原文地址：<a class="post-copyright-link" href="http://anzhennanqq.github.io/2017/09/14/Ajax-介绍与使用/" title="http://anzhennanqq.github.io/2017/09/14/Ajax-介绍与使用/" target="_blank">http://anzhennanqq.github.io/2017/09/14/Ajax-介绍与使用/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax是什么？如何运用？"><span class="toc-text">Ajax是什么？如何运用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步，创建XMLHttpRequest对象"><span class="toc-text">第一步，创建XMLHttpRequest对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步，向服务器发送请求"><span class="toc-text">第二步，向服务器发送请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步，接收响应"><span class="toc-text">第三步，接收响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终实现代码"><span class="toc-text">最终实现代码</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">驱动于 <a href="https://hexo.io/zh-cn/" class="footer-link" title="Hexo">Hexo</a>，主题由 <a href="/about" class="footer-link" title="安振男">安振男</a> 设计移植而来</p>
+  <p class="footer-text">&copy; 2016 - 2017 <a href="/about" class="footer-link" title="安振男">安振男</a> 保留部分版权</p>
+  <p class="footer-text">苏ICP备17019692号-1</p>
+</footer>
+
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>
